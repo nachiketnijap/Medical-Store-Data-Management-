@@ -1,0 +1,23 @@
+<div class="mx-auto m-5 bg-primary-subtle rounded-4" style="width: 400px;">
+<form [formGroup]="formdata" (ngSubmit)="saveData(formdata.value)"  class="mx-auto mt-5 mb-5 ms-5 me-5">
+    <div class="mb-3 p-2">
+        <label for="exampleInputEmail1" class="form-label">First Name</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="firstname" placeholder="Enter Firstname" required>
+    </div>
+    <div class="mb-3 p-2">
+        <label for="exampleInputEmail1" class="form-label">Last Name</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="lastname" placeholder="Enter Last Name" required>
+      </div>
+    <div class="mb-3 p-2">
+      <label for="exampleInputEmail1" class="form-label">Username</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="username" placeholder="Enter User Name">
+    </div>
+    <div class="mb-3 p-2">
+      <label for="exampleInputEmail1" class="form-label">Password</label>
+      <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="password" placeholder="Enter Password" required>
+    </div>
+    <div class="d-grid col-6 mx-auto p-2">
+    <button type="submit" class="btn btn-primary">Register</button>
+    </div>
+  </form>
+</div>

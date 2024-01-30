@@ -1,0 +1,63 @@
+{
+  "data": [
+    {
+      "name": "fox",
+      "expiryDate": "2024-02-28",
+      "price": "55",
+      "id": "f3c2"
+    },
+    {
+      "name": "Nachiket",
+      "expiryDate": "2024-02-24",
+      "price": "30",
+      "id": "d2f4"
+    },
+    {
+      "id": "fa9f",
+      "name": "Syrup",
+      "expiryDate": "2024-02-29",
+      "price": "3333"
+    },
+    {
+      "id": "61c3",
+      "name": "Paracetamol",
+      "expiryDate": "2024-03-01",
+      "price": "15"
+    },
+    {
+      "id": "5596",
+      "name": "acid",
+      "expiryDate": "2024-05-16",
+      "price": "55"
+    },
+    {
+      "id": "2858",
+      "name": "abc",
+      "expiryDate": "2024-03-30",
+      "price": "144"
+    }
+  ],
+  "authusers": [
+    {
+      "id": "b5eb",
+      "username": "virat",
+      "password": "kohli",
+      "firstname": "virat",
+      "lastname": "kohli"
+    },
+    {
+      "id": "aa36",
+      "username": "rohit",
+      "password": "sharma",
+      "firstname": "rohit",
+      "lastname": "sharma"
+    },
+    {
+      "id": "0a94",
+      "username": "Rinku",
+      "password": "Singh",
+      "firstname": "Rinku",
+      "lastname": "Singh"
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+<div class="m-4" >
+  <table class="table table-bordered table-light border border-2 border-dark rounded-end table-responsive">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Medicine Name</th>
+        <th scope="col">Expiry Date</th>
+        <th scope="col">Price</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of medicineData |paginate:{itemsPerPage:4,currentPage:p}">
+        <th scope="row">{{data.id}}</th>
+        <td>{{data.name}}</td>
+        <td>{{data.expiryDate}}</td>
+        <td>{{data.price}}</td>
+        <td>
+  
+          <button type="button" class="btn btn-sm btn-primary" style="background-color:rgb(68, 163, 247); width: 80px;" data-bs-toggle="modal" data-bs-target="#exampleModal2" (click)="editData(data)">
+            Edit
+          </button>
+          <br>
+          <br>
+          <input type="submit" value="Delete" (click)="deleteData(data.id)" class="btn btn-sm btn-danger" style="background-color:rgb(245, 94, 64); width: 80px;"> 
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <div class="d-grid col-6 mx-auto">
+    <button type="button" class="btn btn-primary btn-lg btn-block " data-bs-toggle="modal"
+    data-bs-target="#exampleModal">
+    Add Medicine
+  </button>
+  </div>
+  <pagination-controls (pageChange)="p=$event" >
+  
+  </pagination-controls>
+  
+  <!-- Modal for updating data -->
+  <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Data</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="formdata">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Name</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="name">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Expiry Date</label>
+              <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="expiryDate">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Price</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="price">
+            </div>
+            
+            <button type="submit" class="btn btn-primary" (click)="Update()">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>  
+  
+  
+  
+  
+ 
+  
+  
+  
+  
+  
+  <!-- Modal form for Adding Data -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Add Data</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="formdata" (ngSubmit)="saveData(formdata.value)">
+            <div class="form-group">
+              <label for="name">Medicine Name</label>
+              <input type="text" class="form-control" [class.is-invalid]="name.invalid && name.touched"
+                formControlName="name" id="name" aria-describedby="emailHelp" placeholder="Enter Name">
+            </div>
+            <div class="form-group">
+              <label for="course">Expiry Date</label>
+              <input type="date" class="form-control" id="course" aria-describedby="course" formControlName="expiryDate"
+                placeholder="Enter date">
+  
+            </div>
+            <div class="form-group">
+              <label for="price">Price</label>
+              <input type="text" class="form-control" [class.is-invalid]="price.invalid && price.touched"
+                formControlName="price" id="price" aria-describedby="emailHelp" placeholder="Enter price">
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
